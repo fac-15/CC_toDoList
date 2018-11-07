@@ -37,6 +37,7 @@
     // bind create todo form
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
+        event.preventDefault();
         // https://developer.mozilla.org/en-US/docs/Web/Events/submit
         // what does event.preventDefault do?
         // what is inside event.target?
