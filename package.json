@@ -4,7 +4,7 @@
   "description": "",
   "main": "dom.js",
   "scripts": {
-    "test": "tape"
+    "test": "tape ./test.js"
   },
   "repository": {
     "type": "git",
