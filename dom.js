@@ -7,9 +7,9 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo' },
-      { id: -2, description: 'second todo' },
-      { id: -1, description: 'third todo' },
+      { id: -3, description: 'first todo', done: false },
+      { id: -2, description: 'second todo', done: false },
+      { id: -1, description: 'third todo', done: false },
     ]; // this is our initial todoList
   
     // This function takes a todo, it returns the DOM node representing that todo
@@ -32,17 +32,54 @@
       // add markTodo button
       var markButtonNode = document.createElement('input');
       markButtonNode.setAttribute('type', 'checkbox');
+      console.log(todo);
+      if(todo.done){
+        markButtonNode.checked = true;
+      }
+
+
       markButtonNode.addEventListener('click', function(event) {
+
+        
+        
+        
+        // event.target.checked = true;
+        // console.log(event.target)
+        
+        // if (todo.done === true) {
+        //   console.log('ok');
+        //   // markButtonNode.checked
+        //   // markButtonNode.removeAttribute('checked');
+        //   markButtonNode.setAttribute('checked', '');
+  
+        //   // markButtonNode.checked = true;
+        // }
+        
+        // console.log(todo.done, markButtonNode);
+        // if (markButtonNode.checked) console.log('has attribute checked');
         
         // markButtonNode.checked = true;
-        if (todo.done === true) {
-          markButtonNode.checked = true;
-        } else {
-          markButtonNode.checked = false;
-        }
+        
+        
+        // else {
+        //   console.log('nope');
+        //   markButtonNode.removeAttribute('checked');
+        //   // markButtonNode.checked = false;
+        // }
 
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
+
+
+        // console.log(todo.done, event.target);
+
+        // if(todo.done === true) {
+        //   // console.log(markButtonNode);
+        //   event.target.checked = true;
+        //   // markButtonNode.checked = true;
+        // }
+
+
       });
       todoNode.appendChild(markButtonNode);
    
