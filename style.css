@@ -22,6 +22,54 @@ h1 {
   }
 
 
+  /* list items */
+  li {
+    
+    margin-top : .5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    border : 3px solid rgba(4, 104, 101, 1);
+    display : flex;
+    justify-content: space-between;
+    align-items : center;
+  }
+  li:first-child{
+    margin-top : 0;
+  }
+  li span {
+    font-size : 1.25rem;
+    flex : 8;
+  }
+  li button {
+    flex : 1;
+    margin-left : .5rem;
+    padding: .5rem;
+    font-size: 1.25rem;
+    color: black;
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s;
+  }
+  li button.delete {
+    background: rgb(255, 25, 33);
+    color : white;
+  }
+  li button.mark {
+    background: rgba(4, 104, 101); 
+    color : white;
+  }
+  li button.mark.checked-off {
+    background : grey;
+  }
+
+
+
+
+
+
+
   /* form */
   form {
     background-color: rgb(255, 252, 250);

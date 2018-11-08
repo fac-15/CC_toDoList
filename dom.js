@@ -22,25 +22,37 @@
       childNode.textContent = todo.description;
       todoNode.appendChild(childNode);
 
-//       markButtonNode.setAttribute('type', 'checkbox');
-//       if(todo.done){
-//         markButtonNode.checked = true;
-//       }
+      // markButtonNode.setAttribute('type', 'checkbox');
+      
       
      
       // add markTodo button
       var markButtonNode = document.createElement('button');
       markButtonNode.textContent = '✔';
+      markButtonNode.setAttribute('class', 'mark');
+
+      
+      
+      // this doesnt work woop de doooooooo
+      if(todo.done){
+        // markButtonNode.setAttribute('class', 'checked-off');
+        markButtonNode.classList.add('checked-off')
+      }
+
+
       // mark button click
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
+
+        
       });
       todoNode.appendChild(markButtonNode);
       
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
-      deleteButtonNode.textContent = "x";
+      deleteButtonNode.textContent = "X";
+      deleteButtonNode.setAttribute('class', 'delete');
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
