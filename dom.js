@@ -14,43 +14,33 @@
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
+     
       var todoNode = document.createElement('li');
       var childNode = document.createElement('span');
       // you will need to use addEventListener
       // document.addEventListener('')
+      childNode.textContent = todo.description;
       todoNode.appendChild(childNode);
-      childNode.createTextNode(description);
+      
+      // todoNode.appendChild(childNode);
+      // childNode.createTextNode(description);
 
       // add span holding description
 
-
-      var itemInfo = todoFunctions.cloneArrayOfObjects(state, todoNode);
       // this is an array
-      console.log(itemInfo);
-
-      // title
-      var itemTitle = document.createElement('span');
-      // itemTitle.createTextNode(itemInfo.description);
-      // console.log(itemTitle);
-      itemTitle.innerHTML = itemInfo.description;
-      todoNode.appendChild(itemTitle);
-
-
-
-
-
-
-
 
       // add markTodo button
-      var markButtonNode = document.createElement('input');
-      markButtonNode.setAttribute('type', 'checkbox');
+      var markButtonNode = document.createElement('button');
+      markButtonNode.textContent = '✔';
+  
       markButtonNode.addEventListener('click', function(event) {
+        // console.log(todo.done);
         var newState = todoFunctions.markTodo(state, todo.id);
+        // console.log(newState);
         update(newState);
       });
       todoNode.appendChild(markButtonNode);
-   
+      
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.addEventListener('click', function(event) {
