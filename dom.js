@@ -15,8 +15,12 @@
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
+      var childNode = document.createElement('span');
       // you will need to use addEventListener
       // document.addEventListener('')
+      todoNode.appendChild(childNode);
+      childNode.createTextNode(description);
+
       // add span holding description
 
       // add markTodo button
@@ -35,9 +39,6 @@
         update(newState);
       });
       todoNode.appendChild(deleteButtonNode);
-  
-    
-   
   
       return todoNode;
     };
