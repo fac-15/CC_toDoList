@@ -31,7 +31,6 @@ var todoFunctions = {
 
   addTodo: function(todos, newTodo) {
     var newItem = this.createTodo(newTodo);
-
     newItem.id = todoFunctions.generateId();
     return this.cloneArrayOfObjects(todos).concat(newItem);
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)

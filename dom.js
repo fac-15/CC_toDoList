@@ -7,42 +7,40 @@
     var addTodoForm = document.getElementById('add-todo');
   
     var state = [
-      { id: -3, description: 'first todo' },
-      { id: -2, description: 'second todo' },
-      { id: -1, description: 'third todo' },
+      { id: -3, description: 'first todo', done: false },
+      { id: -2, description: 'second todo', done: false },
+      { id: -1, description: 'third todo', done: false },
     ]; // this is our initial todoList
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
-     
+
       var todoNode = document.createElement('li');
       var childNode = document.createElement('span');
-      // you will need to use addEventListener
-      // document.addEventListener('')
+
+      // add description to span
       childNode.textContent = todo.description;
       todoNode.appendChild(childNode);
+
+//       markButtonNode.setAttribute('type', 'checkbox');
+//       if(todo.done){
+//         markButtonNode.checked = true;
+//       }
       
-      // todoNode.appendChild(childNode);
-      // childNode.createTextNode(description);
-
-      // add span holding description
-
-      // this is an array
-
+     
       // add markTodo button
       var markButtonNode = document.createElement('button');
       markButtonNode.textContent = '✔';
-  
+      // mark button click
       markButtonNode.addEventListener('click', function(event) {
-        // console.log(todo.done);
         var newState = todoFunctions.markTodo(state, todo.id);
-        // console.log(newState);
         update(newState);
       });
       todoNode.appendChild(markButtonNode);
       
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
+      deleteButtonNode.textContent = "x";
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
