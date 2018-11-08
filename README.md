@@ -1,7 +1,6 @@
 # To do list add for CC Team
 
-!()[https://www.b2interactive.com/wp-content/uploads/seriously.gif]
-
+![](https://www.b2interactive.com/wp-content/uploads/seriously.gif)
 #### Lessons learned...:
 
 -DeepEquals is needed to check inside an array or object.
