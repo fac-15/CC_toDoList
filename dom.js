@@ -14,75 +14,30 @@
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
-      
-      // console.log(todo);
-      
-      var itemInfo = todoFunctions.cloneArrayOfObjects(state);
-      // console.log(itemInfo);
-      // console.log(todo.description);
-      // var itemDescription = itemInfo[itemInfo.length-1].description;
-      
+
       var todoNode = document.createElement('li');
-      var item = document.createElement('span');
+      var childNode = document.createElement('span');
 
-      item.textContent = todo.description;
-      todoNode.appendChild(item);
+      // add description to span
+      childNode.textContent = todo.description;
+      todoNode.appendChild(childNode);
 
-
+//       markButtonNode.setAttribute('type', 'checkbox');
+//       if(todo.done){
+//         markButtonNode.checked = true;
+//       }
+      
+     
       // add markTodo button
-      var markButtonNode = document.createElement('input');
-      markButtonNode.setAttribute('type', 'checkbox');
-      console.log(todo);
-      if(todo.done){
-        markButtonNode.checked = true;
-      }
-
-
+      var markButtonNode = document.createElement('button');
+      markButtonNode.textContent = '✔';
+      // mark button click
       markButtonNode.addEventListener('click', function(event) {
-
-        
-        
-        
-        // event.target.checked = true;
-        // console.log(event.target)
-        
-        // if (todo.done === true) {
-        //   console.log('ok');
-        //   // markButtonNode.checked
-        //   // markButtonNode.removeAttribute('checked');
-        //   markButtonNode.setAttribute('checked', '');
-  
-        //   // markButtonNode.checked = true;
-        // }
-        
-        // console.log(todo.done, markButtonNode);
-        // if (markButtonNode.checked) console.log('has attribute checked');
-        
-        // markButtonNode.checked = true;
-        
-        
-        // else {
-        //   console.log('nope');
-        //   markButtonNode.removeAttribute('checked');
-        //   // markButtonNode.checked = false;
-        // }
-
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
-
-
-        // console.log(todo.done, event.target);
-
-        // if(todo.done === true) {
-        //   // console.log(markButtonNode);
-        //   event.target.checked = true;
-        //   // markButtonNode.checked = true;
-        // }
-
-
       });
       todoNode.appendChild(markButtonNode);
-   
+      
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
       deleteButtonNode.textContent = "x";
