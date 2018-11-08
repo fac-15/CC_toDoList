@@ -21,3 +21,7 @@
 
 ## Notes and stuff
 - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+## Still todo on the todo....ironically...
+- Clear input once new item has been added to list.
+- Get whole item to grey out when check button is clicked.
