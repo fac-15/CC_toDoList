@@ -17,7 +17,7 @@
 -Understanding the code we started with
 -Write proper test statements
 -Using button to marktodo instead of checkbox
--
+
 
 ## Notes and stuff
 - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
