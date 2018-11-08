@@ -14,38 +14,33 @@
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
+      
+      // console.log(todo);
+      
+      var itemInfo = todoFunctions.cloneArrayOfObjects(state);
+      // console.log(itemInfo);
+      // console.log(todo.description);
+      // var itemDescription = itemInfo[itemInfo.length-1].description;
+      
       var todoNode = document.createElement('li');
-      var childNode = document.createElement('span');
-      // you will need to use addEventListener
-      // document.addEventListener('')
-      todoNode.appendChild(childNode);
-      childNode.createTextNode(description);
+      var item = document.createElement('span');
 
-      // add span holding description
-
-
-      var itemInfo = todoFunctions.cloneArrayOfObjects(state, todoNode);
-      // this is an array
-      console.log(itemInfo);
-
-      // title
-      var itemTitle = document.createElement('span');
-      // itemTitle.createTextNode(itemInfo.description);
-      // console.log(itemTitle);
-      itemTitle.innerHTML = itemInfo.description;
-      todoNode.appendChild(itemTitle);
-
-
-
-
-
-
+      item.textContent = todo.description;
+      todoNode.appendChild(item);
 
 
       // add markTodo button
       var markButtonNode = document.createElement('input');
       markButtonNode.setAttribute('type', 'checkbox');
       markButtonNode.addEventListener('click', function(event) {
+        
+        // markButtonNode.checked = true;
+        if (todo.done === true) {
+          markButtonNode.checked = true;
+        } else {
+          markButtonNode.checked = false;
+        }
+
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       });
@@ -53,6 +48,7 @@
    
       // this adds the delete button
       var deleteButtonNode = document.createElement('button');
+      deleteButtonNode.textContent = "x";
       deleteButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
