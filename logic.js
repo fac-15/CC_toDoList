@@ -32,12 +32,19 @@ var todoFunctions = {
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    return this.cloneArrayOfObjects(todos).filter(idToDelete);
+    return this.cloneArrayOfObjects(todos).filter(item => item.id !== idToDelete)
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
+    return this.cloneArrayOfObjects(todos).map(item => {
+      if(item.id == idToMark){
+        return {...item, done: true}
+      } else {
+        return {...item, done: false}
+      }
+    })
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled

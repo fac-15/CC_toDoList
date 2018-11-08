@@ -6,8 +6,6 @@ test("tape is working", function(t) {
   t.end();
 });
 
-
-
 test('clone array of objects', function(t) {
   var actual = logic.cloneArrayOfObjects([]);
   var expected = []
@@ -41,5 +39,19 @@ test('adding a todo', function(t) {
   var actual = logic.addTodo([], {});
   var expected = [{id: 4}]
   t.deepEquals(actual, expected, "should add object to array");
+  t.end();
+});
+
+test('filter to delete', function(t){
+  var actual = logic.deleteTodo([{a: 1, id: 1}], 1);
+  var expected = [];
+  t.deepEquals(actual, expected, ' should delete object to array');
+  t.end();
+});
+
+test('map to mark', function(t){
+  var actual = logic.markTodo([{a: 1, id: 1}], 1);
+  var expected = [{a: 1, id: 1, done: true}];
+  t.deepEquals(actual, expected, ' should mark object to array');
   t.end();
 });
