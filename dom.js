@@ -19,6 +19,25 @@
       // document.addEventListener('')
       // add span holding description
 
+
+      var itemInfo = todoFunctions.cloneArrayOfObjects(state, todoNode);
+      // this is an array
+      console.log(itemInfo);
+
+      // title
+      var itemTitle = document.createElement('span');
+      // itemTitle.createTextNode(itemInfo.description);
+      // console.log(itemTitle);
+      itemTitle.innerHTML = itemInfo.description;
+      todoNode.appendChild(itemTitle);
+
+
+
+
+
+
+
+
       // add markTodo button
       var markButtonNode = document.createElement('input');
       markButtonNode.setAttribute('type', 'checkbox');
