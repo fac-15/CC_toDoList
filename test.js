@@ -16,28 +16,28 @@ test('clone array of objects', function(t) {
 
 test('adding a todo', function(t) {
   var actual = logic.addTodo([], {a: 1});
-  var expected = [{a: 1, id: 1}]
+  var expected = [ { description: { a: 1 }, done: false, id: 1 } ]
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
 
 test('adding a todo', function(t) {
   var actual = logic.addTodo([{a: 1, id: -1}], {b: 2});
-  var expected = [{a: 1, id: -1}, {b: 2, id: 2}]
+  var expected = [{a: 1, id: -1}, { description: { b: 2 }, done: false, id: 2 } ]
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
 
 test('test id', function(t) {
   var actual = logic.addTodo([{id: -1}], {a: 1});
-  var expected = [{id: -1}, {a: 1, id: 3}]
+  var expected = [{id: -1}, { description: { a: 1 }, done: false, id: 3 }]
   t.deepEquals(actual, expected, "should add id to new object");
   t.end();
 });
 
 test('adding a todo', function(t) {
   var actual = logic.addTodo([], {});
-  var expected = [{id: 4}]
+  var expected = [{ description: {}, done: false, id: 4 }]
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
