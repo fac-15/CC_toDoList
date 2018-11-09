@@ -67,9 +67,22 @@ var todoFunctions = {
     // this element will have its done value toggled
     // hint: array.map
   },
+  sortFunction: function(todos) {
+    // this function feeds in to sortTodos - keep it pure hopefully
+    // - sort by ID
+    // - only sorts once so far (just reverses order)
+    return this.cloneArrayOfObjects(todos).sort(function(a, b) { 
+      return b.id - a.id;
+    });
+  },
   sortTodos: function(todos, sortFunction) {
+
+    // works similar to addTodo
+    var sortedTodos = this.sortFunction(todos);
+    return this.cloneArrayOfObjects(sortedTodos);
+
     // stretch goal! Do this last
-    // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
+    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
   }

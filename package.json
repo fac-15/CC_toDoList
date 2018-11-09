@@ -4,7 +4,7 @@
   "description": "## Notes and stuff - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)",
   "main": "dom.js",
   "scripts": {
-    "test": "tape ./test.js | tap-spec"
+    "test": "tape ./test.js"
   },
   "repository": {
     "type": "git",
