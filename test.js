@@ -103,9 +103,9 @@ test("generateID", function(t) {
   t.end();
 });
 
-test('create todo', function(t){
-  var actual = logic.createTodo('grocery shopping');
-  var expected = {description: 'grocery shopping', done: false};
-  t.deepEquals(actual, expected, ' should create description');
+test("create todo", function(t) {
+  var actual = logic.createTodo("grocery shopping");
+  var expected = { description: "grocery shopping", done: false };
+  t.deepEquals(actual, expected, " should create description");
   t.end();
 });
