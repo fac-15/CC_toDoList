@@ -11,6 +11,7 @@ body {
 
 h1 {
     font-size : 2.5rem;
+    font-weight : bold;
     text-align : center;
 }
   
@@ -19,12 +20,12 @@ h1 {
     padding: 20px;
     box-sizing: border-box;
     max-width: 1200px;
+    margin : 0 auto;
   }
 
 
   /* list items */
   li {
-    
     margin-top : .5rem;
     padding: 1.5rem;
     box-sizing: border-box;
@@ -53,15 +54,21 @@ h1 {
     transition: background-color ease-in-out 0.3s;
   }
   li button.delete {
+    font-weight: bold;
     background: rgb(255, 25, 33);
     color : white;
   }
   li button.mark {
     background: rgba(4, 104, 101); 
-    color : white;
+    color: white;
   }
   li button.mark.checked-off {
-    background : grey;
+    background: grey;
+  }
+  li.checked-off {
+    background: gainsboro;
+    border-color: grey;
+    color: grey;
   }
 
 
@@ -85,8 +92,9 @@ h1 {
     display: block;
   }
   form label {
-    color: rgb(255, 252, 250);
-    padding-bottom: 0.25rem;
+    color: rgba(4, 104, 101);
+    padding: 0.5rem 0;
+    font-weight: bold;
   }
   form input {
     font-family: "Asap", sans-serif;
@@ -98,7 +106,7 @@ h1 {
     width: 100%;
     display: block;
     box-sizing: border-box;
-    border : 1px solid rgba(4, 104, 101, 1);
+    border : 1px solid rgba(4, 104, 101);
   }
   form input[type="text"]:focus {
     border: 1px solid rgb(255, 155, 113);

@@ -23,7 +23,6 @@ var todoFunctions = {
     });
   },
 
-
   // this will take a description, then convert it to an object
   createTodo: function(str){
     return {description: str, done: false}
@@ -47,12 +46,21 @@ var todoFunctions = {
   },
   markTodo: function(todos, idToMark) {
     return this.cloneArrayOfObjects(todos).map(item => {
-      if(item.id == idToMark && item.done === false){
+
+      // item = clicked AND already checked done, remove done
+      if(item.id == idToMark && item.done == true){
+        return {...item, done: false}
+      }
+      // item = clicked OR already checked done, add done
+      else if(item.id == idToMark || item.done == true){
         return {...item, done: true}
-      } else {
+      }
+      // else, must be false
+      else {
         return {...item, done: false}
       }
     })
+
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
