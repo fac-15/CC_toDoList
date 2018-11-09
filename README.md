@@ -8,6 +8,12 @@ link to [website!](https://fac-15.github.io/CC_toDoList/)
 #### Installation
 If you would like to clone and download the files to see locally, you can use the github clone or download button above. If so, please be sure to run `npm install` in order to download our dev dependencies.
 
+##  Built With
+- JavaScript
+- HTML
+- CSS
+- Tape for testing
+
 #### Lessons learned...:
 
 - DeepEquals is needed to check inside an array or object.
