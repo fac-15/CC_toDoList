@@ -32,7 +32,7 @@ If you would like to clone and download the files to see locally, you can use th
 - Using button to marktodo instead of checkbox
 - Wrapping heads around the MVC setup (separation of logic and view) in this project
 
-![Test Coverage](CC_toDoList/d.png)
+![Test Coverage](d.png)
 
 ## Notes and stuff
 - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
