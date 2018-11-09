@@ -95,17 +95,17 @@ test("mark as not done", function(t) {
   t.deepEquals(actual, expected, " should toggle value of done to false");
   t.end();
 });
-
+  
 test("generateID", function(t) {
-  let actual = generateID();
+  let actual = logic.generateID();
   let expected = 5;
   t.equals(actual, expected, "should generate unique ID number");
   t.end();
 });
 
 test("create todo", function(t) {
-  var actual = logic.createTodo("grocery shopping");
-  var expected = { description: "grocery shopping", done: false };
-  t.deepEquals(actual, expected, " should create description");
+  var actual = logic.createTodo("abc");
+  var expected = { description: "abc", done: false, id: 6 };
+  t.deepEquals(actual, expected, " should create description, done and id");
   t.end();
 });
