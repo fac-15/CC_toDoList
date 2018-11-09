@@ -7,8 +7,8 @@ test("tape is working", function(t) {
 });
 
 test('clone array of objects', function(t) {
-  var actual = logic.cloneArrayOfObjects([]);
-  var expected = []
+  var actual = logic.cloneArrayOfObjects([{}]);
+  var expected = [{}];
   t.deepEquals(actual, expected, "should clone array of objects");
   t.end();
 });

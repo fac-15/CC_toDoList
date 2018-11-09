@@ -23,36 +23,44 @@ var todoFunctions = {
     });
   },
 
-
   // this will take a description, then convert it to an object
   createTodo: function(str){
     return {description: str, done: false}
   },
 
   addTodo: function(todos, newTodo) {
-    var newItem = this.createTodo(newTodo);
-    newItem.id = todoFunctions.generateId();
-    return this.cloneArrayOfObjects(todos).concat(newItem);
+    var newTodo = this.createTodo(newTodo);
+    newTodo.id = todoFunctions.generateId();
+    return this.cloneArrayOfObjects(todos).concat(newTodo);
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    return this.cloneArrayOfObjects(todos).filter(item => item.id !== idToDelete)
+    return this.cloneArrayOfObjects(todos).filter(todo => todo.id !== idToDelete)
 
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    return this.cloneArrayOfObjects(todos).map(item => {
-      if(item.id == idToMark && item.done === false){
-        return {...item, done: true}
-      } else {
-        return {...item, done: false}
+    return this.cloneArrayOfObjects(todos).map(todo => {
+
+      // todo = clicked AND already checked done, remove done
+      if(todo.id == idToMark && todo.done == true){
+        return {...todo, done: false}
+      }
+      // todo = clicked OR already checked done, add done
+      else if(todo.id == idToMark || todo.done == true){
+        return {...todo, done: true}
+      }
+      // else, must be false
+      else {
+        return {...todo, done: false}
       }
     })
+
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled

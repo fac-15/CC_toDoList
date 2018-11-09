@@ -5,6 +5,7 @@
   <title>To Do List</title>
   <meta name="description" content="to do list app">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -12,19 +13,21 @@
 <body>
   <main role="main">
 
-    <section>
+    <section role="header">
       <h1>To Do List App</h1>
     </section>
     
     <div id="todo-container">
-      <ul>
-      </ul>
     </div>
+
     <form id="add-todo">
-      <input type="text" name="description" value="" placeholder="add to do list item here">
+      <label for="to-do-item">To Do Item:</label>
+      <input id="to-do-item" type="text" name="description" value="" placeholder="add to do list item here...">
       <input type="submit" name="" value="Submit">
     </form>
+
   </main>
+  
 </body>
 <script type="text/javascript" src="./logic.js"></script>
 <script type="text/javascript" src="./dom.js"></script>
