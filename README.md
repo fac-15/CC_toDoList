@@ -1,9 +1,9 @@
-# To do list add for CC Team
-
-![](https://www.b2interactive.com/wp-content/uploads/seriously.gif)
+# To do list _ CC Team
 
 ![screenshot](Screenshot_20181109_110902.png)
-link to [website!](https://fac-15.github.io/CC_toDoList/)
+:boom::boom: Use our [To do List](https://fac-15.github.io/CC_toDoList/)  :boom::boom:
+
+![](https://www.b2interactive.com/wp-content/uploads/seriously.gif)
 
 #### Installation
 If you would like to clone and download the files to see locally, you can use the github clone or download button above. If so, please be sure to run `npm install` in order to download our dev dependencies.
