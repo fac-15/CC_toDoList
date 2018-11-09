@@ -75,9 +75,9 @@
         // what is inside event.target?
         var description = event.target.getElementsByTagName('input')[0].value;  
         // hint: todoFunctions.addTodos
-        // var newState = [...newItem]; // ?? change this!
-        var newItem = todoFunctions.addTodo(state, description);
-        var newState = [...newItem];
+        // var newState = [...newTodo]; // ?? change this!
+        var newTodo = todoFunctions.addTodo(state, description);
+        var newState = [...newTodo];
         update(newState);
       });
     }

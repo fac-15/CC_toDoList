@@ -1,4 +1,5 @@
 var test = require('tape');
+var tapSpec = require('tap-spec');
 var logic = require('./logic');
 
 test("tape is working", function(t) {
