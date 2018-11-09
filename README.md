@@ -42,6 +42,7 @@ If you would like to clone and download the files to see locally, you can use th
 ## Still todo on the todo...ironically...
 - Add the sort function
 - up our emoji game
-- be more disciplined with testing (i.e. let it drive our development, rather than just getting on with it)
+- Be more disciplined with testing.
+We began well but it didn't last... (i.e. Let testing drive our development, rather than just getting on with it)
 ![](https://img.buzzfeed.com/buzzfeed-static/static/2016-04/5/13/enhanced/webdr14/anigif_enhanced-30008-1459877354-2.gif)
 
