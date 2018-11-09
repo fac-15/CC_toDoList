@@ -55,3 +55,10 @@ test('map to mark', function(t){
   t.deepEquals(actual, expected, ' should mark object to array');
   t.end();
 });
+
+test('create todo', function(t){
+  var actual = logic.createTodo('grocery shopping');
+  var expected = {description: 'grocery shopping', done: false};
+  t.deepEquals(actual, expected, ' should create description');
+  t.end();
+});
