@@ -1,32 +1,32 @@
-var test = require("tape");
-var tapSpec = require("tap-spec");
-var logic = require("./logic");
+
+var test = require('tape');
+var logic = require('./logic');
 
 test("tape is working", function(t) {
   t.deepEquals(1, 1, "1 should equal 1");
   t.end();
 });
 
-test("clone array of objects", function(t) {
-  var actual = logic.cloneArrayOfObjects([]);
-  var expected = [];
+
+test('clone array of objects', function(t) {
+  var actual = logic.cloneArrayOfObjects([{}]);
+  var expected = [{}];
   t.deepEquals(actual, expected, "should clone array of objects");
   t.end();
 });
 
-test("adding a todo", function(t) {
-  var actual = logic.addTodo([], { description: abc, done: false });
-  var expected = [{ description: abc, done: false, id: 1 }];
+
+test('adding a todo to an empty array', function(t) {
+  var actual = logic.addTodo([], {a: 1});
+  var expected = [ { description: { a: 1 }, done: false, id: 1 } ]
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
 
-test("adding a todo", function(t) {
-  var actual = logic.addTodo([{ a: 1, id: -1 }], { b: 2 });
-  var expected = [
-    { a: 1, id: -1 },
-    { description: { b: 2 }, done: false, id: 2 }
-  ];
+
+test('adding a todo to an array', function(t) {
+  var actual = logic.addTodo([{a: 1, id: -1}], {b: 2});
+  var expected = [{a: 1, id: -1}, { description: { b: 2 }, done: false, id: 2 } ]
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
