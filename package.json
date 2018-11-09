@@ -1,5 +1,5 @@
 {
-  "name": "CC_toDoList",
+  "name": "cc_todolist",
   "version": "1.0.0",
   "description": "## Notes and stuff - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)",
   "main": "dom.js",
@@ -20,5 +20,6 @@
   "devDependencies": {
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
-  }
+  },
+  "dependencies": {}
 }
