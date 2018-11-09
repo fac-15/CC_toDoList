@@ -1,6 +1,7 @@
 # To do list _ CC Team
 
-![screenshot](Screenshot_20181109_110902.png)
+![todoshot](https://user-images.githubusercontent.com/40594944/48263104-e3640400-e41c-11e8-927a-e27d35527044.png)
+
 :boom::boom: Use our [To do List](https://fac-15.github.io/CC_toDoList/)  :boom::boom:
 
 ![](https://www.b2interactive.com/wp-content/uploads/seriously.gif)
@@ -32,14 +33,22 @@ If you would like to clone and download the files to see locally, you can use th
 - Using button to marktodo instead of checkbox
 - Wrapping heads around the MVC setup (separation of logic and view) in this project
 
+![coverage](https://user-images.githubusercontent.com/40594944/48263144-08f10d80-e41d-11e8-805e-9a0f7185b276.png)
+
 ## Notes and stuff
 - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
 - Tested with tape
 
 
 ## Still todo on the todo...ironically...
+![](https://img.buzzfeed.com/buzzfeed-static/static/2016-04/5/13/enhanced/webdr14/anigif_enhanced-30008-1459877354-2.gif)
 - Add the sort function
 - up our emoji game
-- be more disciplined with testing (i.e. let it drive our development, rather than just getting on with it)
-![](https://img.buzzfeed.com/buzzfeed-static/static/2016-04/5/13/enhanced/webdr14/anigif_enhanced-30008-1459877354-2.gif)
+- Be more disciplined with testing.
+We began well but it didn't last... (i.e. Let testing drive our development, rather than just getting on with it)
+
+
+## Where we wish we were...
+
+![](https://thumbs.gfycat.com/CooperativeSinfulFieldmouse-small.gif)
 

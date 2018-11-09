@@ -25,7 +25,7 @@ var todoFunctions = {
 
   // this will take a description, then convert it to an object
   createTodo: function(str){
-    return {id:todoFunctions.generateId(), description: str, done: false}
+    return {id: todoFunctions.generateId(), description: str, done: false}
   },
 
   addTodo: function(todos, newTodo) {

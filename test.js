@@ -2,7 +2,7 @@ var test = require("tape");
 var logic = require("./logic");
 
 test("tape is working", function(t) {
-  t.deepEquals(1, 1, "1 should equal 1");
+  t.equal(1, 1, "1 should equal 1");
   t.end();
 });
 
@@ -14,18 +14,14 @@ test("clone array of objects", function(t) {
 });
 
 test("adding a todo object to an empty array", function(t) {
-  var actual = logic.addTodo([], { description: "abc", done: false, id: 1 });
+  var actual = logic.addTodo([], "abc");
   var expected = [{ description: "abc", done: false, id: 1 }];
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
 
 test("adding a todo object to an array", function(t) {
-  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], {
-    description: "def",
-    done: false,
-    id: 2
-  });
+  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], "def");
   var expected = [
     { description: "abc", done: false, id: -1 },
     { description: "def", done: false, id: 2 }
@@ -35,11 +31,7 @@ test("adding a todo object to an array", function(t) {
 });
 
 test("test id in addTodo", function(t) {
-  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], {
-    description: "def",
-    done: false,
-    id: 3
-  });
+  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], "def");
   var expected = [
     { description: "abc", done: false, id: -1 },
     { description: "def", done: false, id: 3 }
@@ -77,7 +69,7 @@ test("filter to delete specic obj", function(t) {
     ],
     1
   );
-  var expected = [{ description: "abc", done: false, id: 2 }];
+  var expected = [{ description: "def", done: false, id: 2 }];
   t.deepEquals(actual, expected, " should delete object to array");
   t.end();
 });
@@ -95,17 +87,17 @@ test("mark as not done", function(t) {
   t.deepEquals(actual, expected, " should toggle value of done to false");
   t.end();
 });
-
+  
 test("generateID", function(t) {
-  let actual = generateID();
+  let actual = logic.generateId();
   let expected = 5;
   t.equals(actual, expected, "should generate unique ID number");
   t.end();
 });
 
 test("create todo", function(t) {
-  var actual = logic.createTodo("grocery shopping");
-  var expected = { description: "grocery shopping", done: false };
-  t.deepEquals(actual, expected, " should create description");
+  var actual = logic.createTodo("abc");
+  var expected = { description: "abc", done: false, id: 6 };
+  t.deepEquals(actual, expected, " should create description, done and id");
   t.end();
 });
