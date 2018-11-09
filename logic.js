@@ -29,34 +29,36 @@ var todoFunctions = {
   },
 
   addTodo: function(todos, newTodo) {
-    var newItem = this.createTodo(newTodo);
-    return this.cloneArrayOfObjects(todos).concat(newItem);
+
+    var newTodo = this.createTodo(newTodo);
+    return this.cloneArrayOfObjects(todos).concat(newTodo);
+
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    return this.cloneArrayOfObjects(todos).filter(item => item.id !== idToDelete)
+    return this.cloneArrayOfObjects(todos).filter(todo => todo.id !== idToDelete)
 
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
   },
   markTodo: function(todos, idToMark) {
-    return this.cloneArrayOfObjects(todos).map(item => {
+    return this.cloneArrayOfObjects(todos).map(todo => {
 
-      // item = clicked AND already checked done, remove done
-      if(item.id == idToMark && item.done == true){
-        return {...item, done: false}
+      // todo = clicked AND already checked done, remove done
+      if(todo.id == idToMark && todo.done == true){
+        return {...todo, done: false}
       }
-      // item = clicked OR already checked done, add done
-      else if(item.id == idToMark || item.done == true){
-        return {...item, done: true}
+      // todo = clicked OR already checked done, add done
+      else if(todo.id == idToMark || todo.done == true){
+        return {...todo, done: true}
       }
       // else, must be false
       else {
-        return {...item, done: false}
+        return {...todo, done: false}
       }
     })
 

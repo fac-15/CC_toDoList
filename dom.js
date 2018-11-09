@@ -14,6 +14,20 @@
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
+      
+      // console.log(todo);
+      
+      var itemInfo = todoFunctions.cloneArrayOfObjects(state);
+      // console.log(itemInfo);
+      // console.log(todo.description);
+      // var itemDescription = itemInfo[itemInfo.length-1].description;
+      
+      var todoNode = document.createElement('li');
+      var item = document.createElement('span');
+
+      item.textContent = todo.description;
+      todoNode.appendChild(item);
+
 
       // console.log(todo);
 
@@ -46,6 +60,17 @@
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
+
+
+        // console.log(todo.done, event.target);
+
+        // if(todo.done === true) {
+        //   // console.log(markButtonNode);
+        //   event.target.checked = true;
+        //   // markButtonNode.checked = true;
+        // }
+
+
       });
       todoNode.appendChild(markButtonNode);
 
@@ -76,9 +101,9 @@
         var description = event.target.getElementsByTagName('input')[0].value;
         if(description.length<1) return false;  
         // hint: todoFunctions.addTodos
-        // var newState = [...newItem]; // ?? change this!
-        var newItem = todoFunctions.addTodo(state, description);
-        var newState = [...newItem];
+        // var newState = [...newTodo]; // ?? change this!
+        var newTodo = todoFunctions.addTodo(state, description);
+        var newState = [...newTodo];
         update(newState);
         addTodoForm.reset();
       });
