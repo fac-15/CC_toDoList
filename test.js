@@ -2,7 +2,7 @@ var test = require("tape");
 var logic = require("./logic");
 
 test("tape is working", function(t) {
-  t.deepEquals(1, 1, "1 should equal 1");
+  t.equal(1, 1, "1 should equal 1");
   t.end();
 });
 
