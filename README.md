@@ -1,7 +1,7 @@
 # To do list add for CC Team
 
 ![screenshot](Screenshot_20181109_110902.png)
-link to [website!](https://fac-15.github.io/CC_toDoList/)
+Use our [To do List](https://fac-15.github.io/CC_toDoList/)
 
 ![](https://www.b2interactive.com/wp-content/uploads/seriously.gif)
 
