@@ -75,6 +75,16 @@
         addTodoForm.reset();
       });
     }
+
+
+
+    // add sort button (added in DOM, without js)
+    var sortButtonNode = document.getElementById('sort-container').childNodes[1];
+    sortButtonNode.addEventListener('click', function(event) {
+      var newState = todoFunctions.sortTodos(state);
+      update(newState);
+      console.log(newState);
+    });
   
 
 

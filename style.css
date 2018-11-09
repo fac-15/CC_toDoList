@@ -1,155 +1,179 @@
 
 /* body styles */
 body {
-    /* font-family: 'Charmonman', cursive; */
-    font-family: "Asap", sans-serif;
-    font-size: 16px / 1em;
-    line-height: 1.5;
-    color: rgb(4, 104, 101);
+  /* font-family: 'Charmonman', cursive; */
+  font-family: "Asap", sans-serif;
+  font-size: 16px / 1em;
+  line-height: 1.5;
+  color: rgb(4, 104, 101);
 }
 
 
 h1 {
-    font-size : 2.5rem;
-    font-weight : bold;
-    text-align : center;
+  font-size : 2.5rem;
+  font-weight : bold;
+  text-align : center;
+}
+ 
+button {
+  margin-left : .5rem;
+  padding: .5rem;
+  font-size: 1.25rem;
+  color: black;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
 }
   
-  
-  main {
-    padding: 20px;
-    box-sizing: border-box;
-    max-width: 1200px;
-    margin : 0 auto;
-  }
+main {
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin : 0 auto;
+}
 
-
-  /* list items */
-  li {
-    margin-top : .5rem;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    border : 3px solid rgba(4, 104, 101, 1);
-    display : flex;
-    justify-content: space-between;
-    align-items : center;
-  }
-  li:first-child{
-    margin-top : 0;
-  }
-  li span {
-    font-size : 1.25rem;
-    flex : 8;
-  }
-  li button {
-    flex : 1;
-    margin-left : .5rem;
-    padding: .5rem;
-    font-size: 1.25rem;
-    color: black;
-    border: 0;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color ease-in-out 0.3s;
-  }
-  li button.delete {
-    font-weight: bold;
-    background: rgb(255, 25, 33);
-    color : white;
-  }
-  li button.mark {
-    background: rgba(4, 104, 101); 
-    color: white;
-  }
-  li button.mark.checked-off {
-    background: grey;
-  }
-  li.checked-off {
-    background: gainsboro;
-    border-color: grey;
-    color: grey;
-  }
+/* sort button and container */
+#sort-container {
+  display : flex;
+  justify-content : flex-end;
+  margin-bottom : 1rem;
+  /* padding : 0 1.5rem; */
+  box-sizing: border-box;
+  /* border : 3px solid transparent; */
+  /* align with list items */
+}
+button.sort {
+  background: rgb(255, 155, 113);
+  color : white;
+}
 
 
 
 
 
+/* list items */
+li {
+  margin-top : .5rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  border : 3px solid rgba(4, 104, 101, 1);
+  display : flex;
+  justify-content: space-between;
+  align-items : center;
+}
+li:first-child{
+  margin-top : 0;
+}
+li span {
+  font-size : 1.25rem;
+  flex : 8;
+}
+li button {
+  flex : 1;
+}
+li button.delete {
+  font-weight: bold;
+  background: rgb(255, 25, 33);
+  color : white;
+}
+li button.mark {
+  background: rgba(4, 104, 101); 
+  color: white;
+}
+li button.mark.checked-off {
+  background: grey;
+}
+li.checked-off {
+  background: gainsboro;
+  border-color: grey;
+  color: grey;
+}
 
 
-  /* form */
+
+
+
+
+
+/* form */
+form {
+  background-color: rgb(255, 252, 250);
+  margin: 1rem 0 2rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  background: rgba(4, 104, 101, 0.2);
+  border : 3px solid rgba(4, 104, 101, 1);
+}
+form input,
+form label {
+  display: block;
+}
+form label {
+  color: rgba(4, 104, 101);
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
+form input {
+  font-family: "Asap", sans-serif;
+  font-size: 1.5rem;
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border : 1px solid rgba(4, 104, 101);
+}
+form input[type="text"]:focus {
+  border: 1px solid rgb(255, 155, 113);
+}
+
+
+
+form input[type="submit"] {
+  margin-top: 4rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background: rgba(4, 104, 101, 0.8);
+  color: rgb(255, 252, 250);
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.3s;
+}
+
+form input[type="submit"]:hover,
+form input[type="submit"]:focus {
+  background: rgb(255, 155, 113);
+}
+
+
+
+a {
+  text-decoration: none;
+  font-family: "Asap", sans-serif;
+  color: rgb(4, 104, 101);
+  margin: 8px;
+}
+
+/* mid to large screen stuff */
+@media only screen and (min-width: 600px) {
+
+  section,
+  #sort-container,
+  #todo-container,
   form {
-    background-color: rgb(255, 252, 250);
-    margin: 1rem 0 2rem;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    background: rgba(4, 104, 101, 0.2);
-    border : 3px solid rgba(4, 104, 101, 1);
+    max-width: 80%;
+    margin: 0 auto 2rem;
   }
-  form input,
-  form label {
-    display: block;
+  #sort-container {
+    margin-bottom : 1rem;
   }
-  form label {
-    color: rgba(4, 104, 101);
-    padding: 0.5rem 0;
-    font-weight: bold;
-  }
-  form input {
-    font-family: "Asap", sans-serif;
-    font-size: 1.5rem;
-    border: 0;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-    border : 1px solid rgba(4, 104, 101);
-  }
-  form input[type="text"]:focus {
-    border: 1px solid rgb(255, 155, 113);
-  }
-
-
-
-  form input[type="submit"] {
-    margin-top: 4rem;
-    padding: 1rem;
-    font-size: 1.25rem;
-    background: rgba(4, 104, 101, 0.8);
-    color: rgb(255, 252, 250);
-    border: 0;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color ease-in-out 0.3s;
-  }
-
-  form input[type="submit"]:hover,
-  form input[type="submit"]:focus {
-    background: rgb(255, 155, 113);
-  }
-  
-
-  
-  a {
-    text-decoration: none;
-    font-family: "Asap", sans-serif;
-    color: rgb(4, 104, 101);
-    margin: 8px;
-  }
-  
-  /* mid to large screen stuff */
-  @media only screen and (min-width: 600px) {
-
-    section,
-    #todo-container,
-    form {
-      max-width: 80%;
-      margin: 0 auto 2rem;
-    }
-  }
+}
   
 
   
