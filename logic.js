@@ -1,8 +1,9 @@
 // Part 1. Fill in any missing parts of the todoFunction object!
 // you can access these on todo.todoFunctions
 // For part one we expect you to use tdd
-
+var order;
 var todoFunctions = {
+  
   // todoFunctions.generateId() will give you a unique id
   // You do not need to understand the implementation of this function.
   generateId: (function() {
@@ -25,7 +26,7 @@ var todoFunctions = {
 
   // this will take a description, then convert it to an object
   createTodo: function(str){
-    return {id: todoFunctions.generateId(), description: str, done: false}
+    return {id:todoFunctions.generateId(), description: str, done: false}
   },
 
   addTodo: function(todos, newTodo) {
@@ -71,8 +72,14 @@ var todoFunctions = {
     // this function feeds in to sortTodos - keep it pure hopefully
     // - sort by ID
     // - only sorts once so far (just reverses order)
+    order = !order;
     return this.cloneArrayOfObjects(todos).sort(function(a, b) { 
-      return b.id - a.id;
+      if (order) {
+        return b.id - a.id;
+      } else {
+        return a.id - b.id;
+      }
+      
     });
   },
   sortTodos: function(todos, sortFunction) {
