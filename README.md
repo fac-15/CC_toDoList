@@ -17,12 +17,13 @@
 - Understanding the code we started with
 - Write proper test statements
 - Using button to marktodo instead of checkbox
-
+- Wrapping heads around the MVC setup (separation of logic and view) in this project
 
 ## Notes and stuff
 - [IIFE - Immediately Invoked Function Expression](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+- Tested with tape
 
-## Still todo on the todo....ironically...
-- Clear input once new item has been added to list.
-- Add the sort function.
-
+## Still todo on the todo...ironically...
+- Add the sort function
+- up our emoji game
+- be more disciplined with testing (i.e. let it drive our development, rather than just getting on with it)

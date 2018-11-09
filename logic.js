@@ -25,12 +25,11 @@ var todoFunctions = {
 
   // this will take a description, then convert it to an object
   createTodo: function(str){
-    return {description: str, done: false}
+    return {id:todoFunctions.generateId(), description: str, done: false}
   },
 
   addTodo: function(todos, newTodo) {
     var newItem = this.createTodo(newTodo);
-    newItem.id = todoFunctions.generateId();
     return this.cloneArrayOfObjects(todos).concat(newItem);
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
