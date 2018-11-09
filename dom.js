@@ -14,23 +14,8 @@
   
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
-      
-      // console.log(todo);
-      
-      var itemInfo = todoFunctions.cloneArrayOfObjects(state);
-      // console.log(itemInfo);
-      // console.log(todo.description);
-      // var itemDescription = itemInfo[itemInfo.length-1].description;
-      
-      var todoNode = document.createElement('li');
-      var item = document.createElement('span');
 
-      item.textContent = todo.description;
-      todoNode.appendChild(item);
-
-
-      // console.log(todo);
-
+      // create list item
       var todoNode = document.createElement('li');
 
       // add description
@@ -45,32 +30,16 @@
       markButtonNode.setAttribute('class', 'mark');
       markButtonNode.setAttribute('aria-label', 'checked button');
 
-
-      // this doesnt work woop de doooooooo
-      // - aim is to read done property and select 'checked-off' if so
+      // mark checked off items
       if(todo.done){
-        // markButtonNode.setAttribute('class', 'checked-off');
         markButtonNode.classList.add('checked-off');
         todoNode.classList.add('checked-off');
       }
 
       // mark button click
-      // - updates done property with markToDo
-      // -- but overwrites others, only latest clicked works
       markButtonNode.addEventListener('click', function(event) {
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
-
-
-        // console.log(todo.done, event.target);
-
-        // if(todo.done === true) {
-        //   // console.log(markButtonNode);
-        //   event.target.checked = true;
-        //   // markButtonNode.checked = true;
-        // }
-
-
       });
       todoNode.appendChild(markButtonNode);
 
@@ -95,16 +64,14 @@
     if (addTodoForm) {
       addTodoForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-        // what does event.preventDefault do?
-        // what is inside event.target?
         var description = event.target.getElementsByTagName('input')[0].value;
+        // description must be 1 character long minimum
         if(description.length<1) return false;  
-        // hint: todoFunctions.addTodos
-        // var newState = [...newTodo]; // ?? change this!
+        // add to do item to list
         var newTodo = todoFunctions.addTodo(state, description);
         var newState = [...newTodo];
         update(newState);
+        // reset form
         addTodoForm.reset();
       });
     }
@@ -121,11 +88,9 @@
     // you do not need to change this function
     var renderState = function(state) {
       var todoListNode = document.createElement('ul');
-  
       state.forEach(function(todo) {
         todoListNode.appendChild(createTodoNode(todo));
       });
-  
       // you may want to add a class for css
       container.replaceChild(todoListNode, container.firstChild);
     };
