@@ -14,18 +14,14 @@ test("clone array of objects", function(t) {
 });
 
 test("adding a todo object to an empty array", function(t) {
-  var actual = logic.addTodo([], { description: "abc", done: false, id: 1 });
+  var actual = logic.addTodo([], "abc");
   var expected = [{ description: "abc", done: false, id: 1 }];
   t.deepEquals(actual, expected, "should add object to array");
   t.end();
 });
 
 test("adding a todo object to an array", function(t) {
-  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], {
-    description: "def",
-    done: false,
-    id: 2
-  });
+  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], "def");
   var expected = [
     { description: "abc", done: false, id: -1 },
     { description: "def", done: false, id: 2 }
@@ -35,11 +31,7 @@ test("adding a todo object to an array", function(t) {
 });
 
 test("test id in addTodo", function(t) {
-  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], {
-    description: "def",
-    done: false,
-    id: 3
-  });
+  var actual = logic.addTodo([{ description: "abc", done: false, id: -1 }], "def");
   var expected = [
     { description: "abc", done: false, id: -1 },
     { description: "def", done: false, id: 3 }
@@ -77,7 +69,7 @@ test("filter to delete specic obj", function(t) {
     ],
     1
   );
-  var expected = [{ description: "abc", done: false, id: 2 }];
+  var expected = [{ description: "def", done: false, id: 2 }];
   t.deepEquals(actual, expected, " should delete object to array");
   t.end();
 });
@@ -97,7 +89,7 @@ test("mark as not done", function(t) {
 });
   
 test("generateID", function(t) {
-  let actual = logic.generateID();
+  let actual = logic.generateId();
   let expected = 5;
   t.equals(actual, expected, "should generate unique ID number");
   t.end();
